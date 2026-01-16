@@ -12,5 +12,5 @@ use imgui_glow_renderer::*;
 use kittymemory::prelude::*;
 use log::*;
 use ndk::event::*;
-use ndk_sys::AInputEvent;
+use ndk_sys::*;
 use std::{ffi::c_void, mem::transmute, ptr::*, sync::OnceLock, time::Duration};
