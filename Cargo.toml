@@ -7,16 +7,16 @@ repository = "https://github.com/Klarexxx/Android-Imgui-Mod-Menu-rs"
 license = "GPL-3.0-or-later"
 
 [dependencies]
+log = "0.4.29"
 android_logger = "0.15.1"
-dobby-rs = "0.1.0"
 egl = "0.2.7"
 imgui = "0.12.0"
 imgui-glow-renderer = "0.13.0"
-jni = "0.21.1"
-kittymemory-rs = "0.2.6"
-log = "0.4.29"
+jni = "0.22.4"
 ndk = "0.9.0"
 ndk-sys = "0.6.0"
+kittymemory-rs = { git = "https://github.com/Klarexxx/kittymemory-rs" }
+dobby-rs = "0.1.0"
 
 [lib]
 crate-type = ["cdylib"]

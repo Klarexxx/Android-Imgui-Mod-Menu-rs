@@ -1,6 +1,6 @@
 #![allow(unsafe_op_in_unsafe_fn)]
 use jni::{
-    self, JavaVM,
+    self,
     sys::{JNI_VERSION_1_6, jint},
 };
 use kittymemory::prelude::*;
@@ -9,9 +9,7 @@ use std::{mem::transmute, os::raw::c_void, sync::OnceLock, thread::sleep};
 mod menu;
 
 #[unsafe(no_mangle)]
-pub extern "system" fn JNI_OnLoad(vm: JavaVM, _: *mut c_void) -> jint {
-    let _env = vm.get_env().expect("Cannot get reference to the JNIEnv");
-
+pub extern "C" fn JNI_OnLoad(_vm: *mut c_void, _: *mut c_void) -> jint {
     std::hint::black_box(env!("CARGO_PKG_AUTHORS"));
     android_logger::init_once(
         android_logger::Config::default()
